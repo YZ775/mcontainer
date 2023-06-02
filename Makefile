@@ -6,7 +6,7 @@ ARCH ?= arm64
 RUN_BY ?= multipass
 GO_DIR = /usr/local/go/bin/go
 
-ifeq ($(OS),darwin)
+ifeq ($(OS),Darwin)
 	EXEC = multipass exec mcontainer-vm --
 else
 	EXEC =
