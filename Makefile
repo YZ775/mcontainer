@@ -17,9 +17,16 @@ multipass-launch:
 	multipass launch --name mcontainer-vm --cloud-init multipass.yaml 22.04
 	multipass mount $(shell pwd) mcontainer-vm:/mcontainer
 
+.PHONY: multipass-start
+multipass-start:
+	multipass start mcontainer-vm
+
 .PHONY: multipass-stop
 multipass-stop:
 	multipass stop mcontainer-vm
+
+.PHONY: multipass-restart
+multipass-restart:multipass-stop multipass-start
 
 .PHONY: multipass-delete
 multipass-delete:
